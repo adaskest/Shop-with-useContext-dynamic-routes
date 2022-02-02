@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import context from "./context/context";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {useState} from "react";
+import Header from "./components/Header";
+import AllProd from "./pages/AllProd";
+import CreateP from "./pages/CreateP";
+import CartP from "./pages/CartP";
+import SingleItemP from "./pages/SingleItemP";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [page, setPage] = useState(null)
+    const [items, setItems] = useState([])
+    const [item, setItem] = useState([])
+    const [cartItems, setCartItems] = useState([])
+
+    return (
+        <div className="App">
+            <context.Provider value={{items, setItems, page, setPage, item,
+                setItem, cartItems, setCartItems}}>
+                <Router>
+                    <Header/>
+                    <Routes>
+                        <Route path='/' element={<AllProd/>}/>
+                        <Route path='/item/:title' element={<SingleItemP/>}/>
+                        <Route path='/create' element={<CreateP/>}/>
+                        <Route path='/shop' element={<CartP/>}/>
+                    </Routes>
+                </Router>
+            </context.Provider>
+        </div>
+    );
 }
 
 export default App;

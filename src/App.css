@@ -1,38 +1,113 @@
 .App {
-  text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e0ffe0;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 100%;
+    background-color: lightgrey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.active {
+    color: white;
+    border: 2px solid white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a, .btn {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: red;
+    transition: 0.4s;
+    margin: 5px;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover, a:hover {
+    color: white;
+    border: 2px solid white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.all {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, textarea {
+    width: 400px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.card {
+    cursor: pointer;
+    height: 500px;
+    width: 300px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    background-color: lightblue;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+    background-color: burlywood;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.price {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.oneItem {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
